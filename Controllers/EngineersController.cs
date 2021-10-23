@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Factory.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ToDoList.Controllers {
+namespace Factory.Controllers {
   public class EngineersController: Controller {
-    private readonly ToDoListContext _db;
+    private readonly FactoryContext _db;
 
-    public EngineersController(ToDoListContext db) {
+    public EngineersController(FactoryContext db) {
       _db = db;
     }
 
