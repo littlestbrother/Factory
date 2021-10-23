@@ -2,27 +2,22 @@
   Layout = "_Layout";
 }
 
-@model MachineShelter.Models.Engineer;
+@model Factory.Models.Engineer;
 
-<h2>Engineer Details</h2>
-<hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-
+<h2>@Html.DisplayFor(model => model.Name) (engineer) details</h2>
+<hr/>
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This Engineer does not contain any Machines</p>
+  <p>this engineer does not maintain any machines.</p>
 }
 else
 {
-  <h4>Machines the Engineer contains:</h4>
-  <ul>
+  <h4>machines mantained:</h4>
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Machine.Name</li>
   }
-  </ul>
 }
-
-<p>@Html.ActionLink("Back to Engineers", "Index")</p>
-<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
+<hr/>
+<p>@Html.ActionLink("edit", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("delete", "Delete", new { id = Model.EngineerId })</p>
