@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MachineShelter.Models.Machine
+
+<h2>Edit @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.MachineId)
+    <p>@Html.LabelFor(model => model.Name):</p>
+    @Html.EditorFor(model => model.Name)
+    <br>
+    <input type="submit" value="Save" />
+}
+<br>
+<p>@Html.ActionLink("Back to list", "Index")</p>
