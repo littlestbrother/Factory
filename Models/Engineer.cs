@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models {
+namespace Factory.Models {
   public class Engineer {
     public Engineer() {
       this.JoinEntities = new HashSet < EngineerMachine > ();
