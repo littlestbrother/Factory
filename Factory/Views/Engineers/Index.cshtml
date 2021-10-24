@@ -5,7 +5,7 @@
 @using Factory.Models;
 
 <h1>👨‍🔧 engineers</h1>
-
+<hr>
 @if (@Model.Count == 0)
 {
   <p>no engineers have been added yet.</p>
@@ -14,5 +14,5 @@
   {
     <li>@Html.ActionLink($"{Engineer.Name}", "Details", new { id = Engineer.EngineerId })</li>
   }
-
+<hr>
 <p>@Html.ActionLink("+", "Create")</p>

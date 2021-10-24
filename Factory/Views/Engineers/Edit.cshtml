@@ -4,17 +4,16 @@
 
 @model Factory.Models.Engineer
 
-<h2>Edit</h2>
-
-<h4>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
+<h4>edit "@Html.DisplayFor(model => model.Name)" (engineer)</h4>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-
-  <input type="submit" value="Save" />
+<label for="Name">name: </label>
+  <br>
+  @* @Html.EditorFor(model => model.Name) *@
+  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" value="@Html.DisplayFor(model => model.Name)" required>
+  <br>
+  <input type="submit" value="save" class="btn btn-primary"/>
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
