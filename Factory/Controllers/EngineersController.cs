@@ -55,5 +55,9 @@ namespace Factory.Controllers {
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+          public ActionResult Edit(int id) {
+      var thisEngineer = _db.Engineers.FirstOrDefault(Engineer => Engineer.EngineerId == id);
+      return View(thisEngineer);
+    }
   }
 }
