@@ -4,18 +4,13 @@
 
 @model Factory.Models.Machine
 
-<h2>Add a Engineer</h2>
-
-<h4>Add a Engineer to this task: @Html.DisplayFor(model => model.Name)</h4>
-
+<h3>assign a new engineer to @Html.DisplayFor(model => model.Name)</h3>
+<hr>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.MachineId)
-
-    @Html.Label("Select Engineer")
-    @Html.DropDownList("EngineerId")
-
-    <input type="submit" value="Save" />
+    <label for="EngineerId">engineer:</label>
+    @Html.DropDownList("EngineerId", null, new { @class="form-control", @style="width:300px"})
+<br>
+    <input type="submit" value="save" class="btn btn-primary"/>
 }
-
-<p>@Html.ActionLink("Back to list", "Index")</p>

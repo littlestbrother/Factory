@@ -4,15 +4,17 @@
 
 @model Factory.Models.Machine
 
-<h2>Edit @Html.DisplayFor(model => model.Name)</h2>
+<h3>edit "@Html.DisplayFor(model => model.Name)" (Machine)</h3>
+<hr>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.MachineId)
-    <p>@Html.LabelFor(model => model.Name):</p>
-    @Html.EditorFor(model => model.Name)
-    <br>
-    <input type="submit" value="Save" />
+  @Html.HiddenFor(model => model.MachineId)
+
+<label for="Name">name: </label>
+  <br>
+  @* @Html.EditorFor(model => model.Name) *@
+  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" value="@Html.DisplayFor(model => model.Name)" autocomplete="off" required>
+  <br>
+  <input type="submit" value="save" class="btn btn-primary"/>
 }
-<br>
-<p>@Html.ActionLink("Back to list", "Index")</p>

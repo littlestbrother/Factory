@@ -4,15 +4,16 @@
 
 @model Factory.Models.Machine
 
-<h4>Add a new Machine</h4>
+<h3>add a new machine</h3>
+<hr>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
-
-    @Html.Label("Select Engineer")
-    @Html.DropDownList("EngineerId")
-    <input type="submit" value="Add new Machine" class="btn btn-default" />
+  <label for="Name">name: </label>
+  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" autocomplete="off" required>
+<br>
+    <label for="EngineerId">engineer:</label>
+    @Html.DropDownList("EngineerId", null, new { @class="form-control", @style="width:300px"})
+    <br>
+  <input type="submit" value="add" class="btn btn-primary" />
 }
-<p>@Html.ActionLink("Show all Machines", "Index")</p>

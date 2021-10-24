@@ -4,11 +4,12 @@ Layout = "_Layout";
 
 @model Factory.Models.Engineer
 
-<h4>add an engineer</h4>
+<h3>add an engineer</h3>
+<hr>
 @using (Html.BeginForm())
 {
 <label for="Name">name: </label>
-  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" required>
+  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" autocomplete="off" required>
   <br>
   <input type="submit" value="add" class="btn btn-primary"/>
 }

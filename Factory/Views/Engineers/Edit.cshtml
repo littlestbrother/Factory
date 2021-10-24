@@ -4,16 +4,15 @@
 
 @model Factory.Models.Engineer
 
-<h4>edit "@Html.DisplayFor(model => model.Name)" (engineer)</h4>
-
+<h3>edit "@Html.DisplayFor(model => model.Name)" (engineer)</h3>
+<hr>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
 
 <label for="Name">name: </label>
   <br>
-  @* @Html.EditorFor(model => model.Name) *@
-  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" value="@Html.DisplayFor(model => model.Name)" required>
+  <input type=text id="Name" name="Name" placeholder="new name here" class="form-control" style="width:300px;" value="@Html.DisplayFor(model => model.Name)" autocomplete="off" required>
   <br>
   <input type="submit" value="save" class="btn btn-primary"/>
 }
