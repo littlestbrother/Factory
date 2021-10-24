@@ -6,6 +6,7 @@ namespace Factory {
     public static void Main(string[] args) {
       var host = new WebHostBuilder()
         .UseKestrel()
+        .UseWebRoot("Content")
         .UseContentRoot(Directory.GetCurrentDirectory())
         .UseIISIntegration()
         .UseStartup < Startup > ()
